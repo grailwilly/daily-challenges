@@ -8,12 +8,20 @@
 # * 'abcdef' => ['ab', 'cd', 'ef']
 
 def solution(str)
-  arr = str.chars
-  new_arr = []
-  if arr.length == 0 {
-    return arr
-  }
-    
+  arr = []  
+  i = 0
+  while i < str.length
+    if str.length == 0
+      arr = []
+    elsif i < str.length - 1
+      arr << str[i..i+1]
+    elsif i == str.length -1
+      arr << str[i] + "_"
+    end
+
+    i += 2
+  end
+  return arr
 end
 
 # Test.assert_equals(solution("abcdef"), ["ab", "cd", "ef"])
