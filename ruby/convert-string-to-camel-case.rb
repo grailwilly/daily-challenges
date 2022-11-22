@@ -5,7 +5,16 @@
 # "The_Stealth_Warrior" gets converted to "TheStealthWarrior"
 
 def to_camel_case(str)
- test git commit ammend
+  str.gsub(/\s(.)/) do |s|
+    c1 = s[0]
+    case c1
+    when /[A-Za-z]/
+      c1 + s[1..-1].downcase
+    else
+      s[1].upcase + s[2..-1].downcase
+    end
+  end
+  return str
 end
 
 # Test.assert_equals(to_camel_case(''), '', "An empty string was provided but not returned")
